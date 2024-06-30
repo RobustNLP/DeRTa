@@ -84,7 +84,7 @@ def load_prompts(create_prompt, eval_data):
 
 
 def train_gpu(rank, args, world_size, gpus_per_process):
-    if args.mode == "set_prompt_attack":
+    if args.mode == "completion_attack":
         def create_prompt(instruct):
             final_instructions = []
             for example in instruct:
