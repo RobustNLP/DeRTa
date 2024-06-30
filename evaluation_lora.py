@@ -154,7 +154,7 @@ def train_gpu(rank, args, world_size, gpus_per_process):
     #
 
     if args.lora_weights is not None and os.path.exists(args.lora_weights):
-        my_divice_map = torch.load("my_device_mp.dict")
+        my_divice_map = torch.load("lora_device_map.dict")
 
         model.resize_token_embeddings(len(tokenizer))
         model = PeftModel.from_pretrained(model, args.lora_weights, torch_dtype=torch.float16, device_map=my_divice_map)
