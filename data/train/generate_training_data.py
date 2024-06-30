@@ -24,7 +24,6 @@ def read_from_json(filename):
 
 overall_beaver = read_from_json("safety_beaver_safe_and_unsafe_response.json")
 
-
 unsensor_data = []
 for i in range(6):
     unsensor_data += read_from_json("helpfulness_unsencor_wizardlm_60k_part_{}.json".format(i))
