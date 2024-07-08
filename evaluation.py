@@ -1,8 +1,5 @@
 import math
 import multiprocessing
-
-shift = 3
-
 import argparse
 from transformers import AutoTokenizer, AutoModelForCausalLM, GenerationConfig
 import torch
