@@ -5,6 +5,12 @@ generate training data
  python data/train/generate_training_data.py
 ```
 
+
+For vanilla finetune, we have run_clm_llms.py and run_clm_lora.py.
+For our method, we have run_clm_llms_derta_llama_drop_5_percent.py and run_clm_lora_derta_llama.py.
+
+
+
 full parameter training
 ```
 
