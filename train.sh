@@ -12,9 +12,7 @@ export MASTER_PORT="${MASTER_PORT:=29510}"
 export WANDB_DISABLED=true
 
 
-
-
-train_path=transformers/examples/pytorch/language-modeling/run_clm_lora_derta_llama.py
+train_path=run_files/run_clm_lora_derta_llama.py
 valid_path=data/train/example_data_to_read.json
 
 
@@ -34,11 +32,11 @@ do
     torchrun --nnodes 1 --node_rank 0 --nproc_per_node 8 \
         --master_addr $MASTER_ADDR --master_port 6666  \
         ${train_path} \
-        --deepspeed /222043014/ciphersafe/train/deepspeed_config_cuhksz.json \
+        --deepspeed train_config/deepspeed_config_cuhksz.json \
         --model_name_or_path ${model_path} \
         --train_file ${train_file} \
         --use_lora True \
-        --lora_config /222043014/ciphersafe/train/lora_config.json \
+        --lora_config train_config/lora_config.json \
         --validation_file ${valid_path} \
         --preprocessing_num_workers 16 \
         --dataloader_num_workers 0 \
@@ -72,7 +70,7 @@ done
 
 
 
-train_path=/222043014/ciphersafe/transformers/examples/pytorch/language-modeling/run_clm_llms_derta_llama_drop_5_percent.py
+train_path=run_files/run_clm_llms_derta_llama_drop_5_percent.py
 
 valid_path=data/train/example_data_to_read.json
 
