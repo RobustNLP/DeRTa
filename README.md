@@ -6,7 +6,7 @@ A novel approach to improve the safety of large language models, enabling them t
 
 
 ## 👉 Paper
-Please refer to our paper [Arxiv](https://www.4399.com) for more details.
+Please refer to our paper [arxiv](https://www.4399.com) for more details.
 
 <div align="center">
   <img src="cover_derta.png" alt="Logo" width="750">
@@ -242,4 +242,14 @@ To address the issues, we have developed a method where LLMs are explicitly trai
   <img src="main_results.png" alt="Logo" width="750">
 </div>
 
+
+## Citation
+
+If you find our paper&tool interesting and useful, please feel free to give us a star and cite us through:
+```bibtex
+@inproceedings{
+
+}
+
+```
 
