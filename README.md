@@ -9,7 +9,7 @@ A novel approach to improve the safety of large language models, enabling them t
 Please refer to our paper [arxiv](https://www.4399.com) for more details.
 
 <div align="center">
-  <img src="cover_derta.png" alt="Logo" width="750">
+  <img src="paper/cover_derta.png" alt="Logo" width="750">
 </div>
 
 <h3 align="center">LOVE💗 and Peace🌊</h3>
@@ -224,7 +224,7 @@ To address the issues, we have developed a method where LLMs are explicitly trai
 
 
 <div align="center">
-  <img src="method.png" alt="Logo" width="750">
+  <img src="paper/method.png" alt="Logo" width="750">
 </div>
 
 
@@ -233,13 +233,13 @@ To address the issues, we have developed a method where LLMs are explicitly trai
 *Reinforced Transition Optimization (RTO)*: reinforce the model's capability to identify and transition from potential harm to safety refusal at every position within the harmful response sequence. 
 
 <div align="center">
-  <img src="RTO.png" alt="Logo" width="750">
+  <img src="paper/RTO.png" alt="Logo" width="750">
 </div>
 
 
 ## 📃Results
 <div align="center">
-  <img src="main_results.png" alt="Logo" width="750">
+  <img src="paper/main_results.png" alt="Logo" width="750">
 </div>
 
 
