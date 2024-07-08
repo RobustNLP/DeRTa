@@ -227,14 +227,19 @@ To address the issues, we have developed a method where LLMs are explicitly trai
   <img src="method.png" alt="Logo" width="750">
 </div>
 
+
 *MLE with Harmful Response Prefix*: incorporate a segment of the harmful response, varying in length, before the safe response.
 
 *Reinforced Transition Optimization (RTO)*: reinforce the model's capability to identify and transition from potential harm to safety refusal at every position within the harmful response sequence. 
+
 <div align="center">
   <img src="RTO.png" alt="Logo" width="750">
 </div>
 
 
-
+## 📃Results
+<div align="center">
+  <img src="Rmain_results.png" alt="Logo" width="750">
+</div>
 
 
