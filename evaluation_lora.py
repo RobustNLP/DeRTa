@@ -1,9 +1,6 @@
 import math
 import multiprocessing
-
-shift = 3
 import os
-
 import argparse
 from transformers import AutoTokenizer, AutoModelForCausalLM, GenerationConfig
 import random
