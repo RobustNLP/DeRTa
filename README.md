@@ -9,7 +9,7 @@ A novel approach to improve the safety of large language models, enabling them t
 Please refer to our paper [Arxiv](https://www.4399.com) for more details.
 
 <div align="center">
-  <img src="cover_derta.png" alt="Logo" width="500">
+  <img src="cover_derta.png" alt="Logo" width="750">
 </div>
 
 <h3 align="center">LOVE💗 and Peace🌊</h3>
@@ -170,15 +170,64 @@ do
   done
 done
 ```
+## 🛠️ Evaluation
+Full parameter
+```
+models=(saved_model/Meta-Llama-3-8B_llama_derta)
+
+gpu_num=8
+block_size=1024
+mode=None
+batch=25
+
+for model in "${models[@]}"
+do
+
+  python evaluation.py  --model_name_or_path ${model}   --gpus ${gpu_num} --block_size ${block_size}  --batch ${batch} --mode ${mode}  --eval_data data/test/helpfulness_gsm8k_500.json
+
+  python evaluation.py  --model_name_or_path ${model}   --gpus ${gpu_num} --block_size ${block_size}  --batch ${batch} --mode completion_attack --eval_data data/test/safety_completionattack.json
+
+done
+```
+
+LoRA
+```
+model=llms/Meta-Llama-3-70B
+lora_names=(saved_model/lora_Meta-Llama-3-70B_llama_derta)
+
+gpu_num=8
+block_size=1024
+mode=None
+batch=25
+for lora_name in "${lora_names[@]}"
+do
+
+  python evaluation_lora.py  --model_name_or_path ${model}   --gpus ${gpu_num} --block_size ${block_size}  --batch ${batch} --mode ${mode} --eval_data data/test/helpfulness_gsm8k_500.json --lora_weights ${lora_name}
+
+  python evaluation_lora.py  --model_name_or_path ${model}   --gpus ${gpu_num} --block_size ${block_size}  --batch ${batch} --mode completion_attack --eval_data data/test/safety_completionattack.json --lora_weights ${lora_name}
+
+done
+```
+
+
 
 ## 💡Method
+*Refusal Position Bias*: As shown in the Figure below, in the safety data, the refusal tokens such as 'Sorry', 'I cannot', and 'I apologize', consistently occur within the first few tokens of a safe response. Accordingly, LLMs tuned on these safety data tend to generate refusal tokens at the beginning of a response. 
+
+The refusal positional bias may lead to the following weaknesses: Lack of Necessary Information for Refuse Decision and Lack of a Mechanism to Refuse in Later Positions.
+
+To address the issues, we have developed a method where LLMs are explicitly trained to refuse compliance at any response juncture by embedding the constructed harmful responses within the training process.
+
 
 <div align="center">
-  <img src="paper/Overview.png" alt="Logo" width="500">
+  <img src="method.png" alt="Logo" width="750">
 </div>
 
+*MLE with Harmful Response Prefix*: incorporate a segment of the harmful response, varying in length, before the safe response.
+
+*Reinforced Transition Optimization (RTO)*: reinforce the model's capability to identify and transition from potential harm to safety refusal at every position within the harmful response sequence. 
 <div align="center">
-  <img src="paper/Overview.png" alt="Logo" width="500">
+  <img src="RTO.png" alt="Logo" width="750">
 </div>
 
 
