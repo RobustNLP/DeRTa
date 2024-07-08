@@ -14,6 +14,7 @@ Please refer to our paper [Arxiv](https://www.4399.com) for more details.
 
 <h3 align="center">LOVE💗 and Peace🌊</h3>
 
+
 ## 🛠️ Data
 ✨ First, generate training data
 ```
@@ -52,6 +53,7 @@ Then, you will get training data for vanilla safety training, MLE with harmful p
 ```
 "safe": "false" means training with MLE.
 "safe": "true" means training with reinforced transition optimization (RTO).
+
 
 
 ## 🛠️ Train
@@ -170,6 +172,8 @@ do
   done
 done
 ```
+
+
 ## 🛠️ Evaluation
 Full parameter
 ```
