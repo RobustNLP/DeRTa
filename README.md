@@ -171,7 +171,15 @@ do
 done
 ```
 
+## 💡Method
 
+<div align="center">
+  <img src="paper/Overview.png" alt="Logo" width="500">
+</div>
+
+<div align="center">
+  <img src="paper/Overview.png" alt="Logo" width="500">
+</div>
 
 
 
