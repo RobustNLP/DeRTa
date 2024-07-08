@@ -1,7 +1,7 @@
 Coming soon.
 
 <h1 align="center"> Refuse Whenever You Feel Unsafe </h1>
-A novel approach to improve the safety of large language models, enabling them to transition effectively from unsafe to safe states.
+A novel approach to improve the safety of large language models, enabling them to transition effectively from unsafe to safe state.
 <br>   <br>
 
 
@@ -239,7 +239,7 @@ To address the issues, we have developed a method where LLMs are explicitly trai
 
 ## 📃Results
 <div align="center">
-  <img src="Rmain_results.png" alt="Logo" width="750">
+  <img src="main_results.png" alt="Logo" width="750">
 </div>
 
 
