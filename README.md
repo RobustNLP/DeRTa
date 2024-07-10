@@ -14,7 +14,7 @@ Please refer to our paper [arxiv](https://www.4399.com) for more details.
 
 
 
-🌰 Example for the whole process:
+🌰 Example for the train process:
 
 Kindly Reminder: You should first put the initial model to the directory 'llms'.
 
