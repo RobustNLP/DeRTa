@@ -231,6 +231,126 @@ done
 ```
 
 
+## 🐞 Explanation for our run file
+✨ Take run_clm_lora_derta_llama.py to illustrate, we have the below modification:
+- we change the function *load_dataset* and *preprocess_function*, enabling it to process the sample with not only 'prefix' and 'text' but also 'safe'
+```
+def load_dataset(data_files):
+    train_path, valid_path, = data_files["train"], data_files["validation"],
+    train_data, valid_data = {"text": [], "prefix": [], "safe": []}, {"text": [], "prefix": [], "safe": []}
+    with open(train_path, 'r', encoding="utf-8") as f:
+        lines = f.readlines()
+        for line in lines:
+            sample = json.loads(line)
+            train_data["text"].append(sample["text"])
+            train_data["prefix"].append(sample["prefix"])
+            train_data["safe"].append(sample["safe"])
+
+        train_dataset = Dataset.from_dict(train_data)
+    with open(valid_path, 'r', encoding="utf-8") as f:
+        lines = f.readlines()
+        for line in lines:
+            sample = json.loads(line)
+            valid_data["text"].append(sample["text"])
+            valid_data["prefix"].append(sample["prefix"])
+            valid_data["safe"].append(sample["safe"])
+
+        valid_dataset = Dataset.from_dict(valid_data)
+
+    temp = DatasetDict()
+
+    temp["column_names"] = Dataset.from_dict(
+        {"train": ["text", "prefix", "safe"], "validation": ["text", "prefix", "safe"]})
+    temp["num_columns"] = Dataset.from_dict({"train": [3], "validation": [3]})
+    temp["num_rows"] = Dataset.from_dict({"train": [len(train_dataset)], "validation": [len(valid_dataset)]})
+    temp["shape"] = Dataset.from_dict({"train": train_dataset.shape, "validation": valid_dataset.shape})
+    temp["train"] = train_dataset
+    temp["validation"] = valid_dataset
+
+    return temp
+```
+```
+    def preprocess_function(examples):
+        with CaptureLogger(tok_logger) as cl:
+            # xxx: 2023-04-07; text: target, prefix: source
+            padding = "max_length"  # or False
+            text = examples[text_column_name]  # may have multiple strings
+            # print(column_names, "😈\n"*10)
+            if "prefix" in column_names:
+                prefix = examples["prefix"]  # may have multiple strings
+                safe_gates = examples["safe"]  # may have multiple strings
+
+                text = [s + t for s, t in zip(prefix, text)]
+                prefix_tokenized = tokenizer(prefix, truncation=True, max_length=block_size, padding=False)
+                text_tokenized = tokenizer(text, truncation=True, max_length=block_size, padding=False)
+                labels = copy.deepcopy(text_tokenized["input_ids"])
+                prefix_lengths = [len(p) for p in prefix_tokenized["input_ids"]]
+
+                safe_labels = [[] for _ in labels]
+                if "safe" in column_names:
+                    for label, prefix_len, safe_gate, safe_label in zip(labels, prefix_lengths, safe_gates,
+                                                                        safe_labels):  # Do not compute loss for prompt inputs
+                        label[:prefix_len] = [IGNORE_INDEX] * prefix_len  # [IGNORE_INDEX for i in range(prefix_len)]
+                        if safe_gate == "true":  # and each != 32000):
+                            safe_label += [1]
+                        else:
+                            safe_label += [0]
+                else:
+                    for label, prefix_len in zip(labels, prefix_lengths):  # Do not compute loss for prompt inputs
+                        label[:prefix_len] = [IGNORE_INDEX] * prefix_len  # [IGNORE_INDEX for i in range(prefix_len)]
+            else:
+                text_tokenized = tokenizer(text, truncation=True, max_length=block_size, padding=False)
+                labels = copy.deepcopy(text_tokenized["input_ids"])
+            text_tokenized["labels"] = labels
+            text_tokenized["safe_labels"] = safe_labels
+        if "Token indices sequence length is longer than the" in cl.out:
+            tok_logger.warning(
+                "^^^^^^^^^^^^^^^^ Please ignore the warning above - this long input will be chunked into smaller bits"
+                " before being passed to the model."
+            )
+        return text_tokenized
+```
+- we change the forward function in class *LlamaForCausalLM*, to implement RTO.
+```
+    def forward(
+            self,
+            input_ids: torch.LongTensor = None,
+            attention_mask: Optional[torch.Tensor] = None,
+            position_ids: Optional[torch.LongTensor] = None,
+            past_key_values: Optional[List[torch.FloatTensor]] = None,
+            inputs_embeds: Optional[torch.FloatTensor] = None,
+            labels: Optional[torch.LongTensor] = None,
+            safe_labels: Optional[torch.LongTensor] = None,
+            use_cache: Optional[bool] = None,
+            output_attentions: Optional[bool] = None,
+            output_hidden_states: Optional[bool] = None,
+            return_dict: Optional[bool] = None,
+            cache_position: Optional[torch.LongTensor] = None,
+    ) -> Union[Tuple, CausalLMOutputWithPast]:
+        binary_safe = safe_labels
+        ...
+        if labels is not None:
+            # Shift so that tokens < n predict n
+            shift_logits = logits[..., :-1, :].contiguous()
+            safe_labels = copy.deepcopy(labels)
+
+            for bs, sl, label in zip(binary_safe, safe_labels, labels):
+                if bs == 0:  # true 1
+                    continue
+                else:
+                    sl[label != -100] = 19701  # llama3
+
+            safe_labels = safe_labels.to(labels.device)
+
+            shift_labels = safe_labels[..., 1:].contiguous()
+
+            # shift_labels = labels[..., 1:].contiguous()
+            # Flatten the tokens
+            loss_fct = CrossEntropyLoss()
+        ...
+```
+- 
+
 
 ## 💡Method
 *Refusal Position Bias*: As shown in the Figure below, in the safety data, the refusal tokens such as 'Sorry', 'I cannot', and 'I apologize', consistently occur within the first few tokens of a safe response. Accordingly, LLMs tuned on these safety data tend to generate refusal tokens at the beginning of a response. 
