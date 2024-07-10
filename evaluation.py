@@ -60,7 +60,7 @@ def load_prompts(create_prompt, eval_data):
         eval_dataset = [
             {"question": few_shot + "\n\n\nQuestion: {}\n".format(each["question"]), "answer": each["answer"]} for each
             in eval_dataset]
-        ps = [each["question"] for each in eval_dataset]
+        ps = [{"question": each["question"]} for each in eval_dataset]
         ps = create_prompt(ps)
         res = [p + "---answer---" + a["answer"] for p, a in zip(ps, eval_dataset)]
 
@@ -71,7 +71,7 @@ def load_prompts(create_prompt, eval_data):
         eval_dataset = [{"question": few_shot + "\n {} \n ".format(each["question"]), "answer": each["answer"]} for each
                         in eval_dataset]
 
-        ps = [each["question"] for each in eval_dataset]
+        ps = [{"question": each["question"]} for each in eval_dataset]
         ps = create_prompt(ps)
         res = [p + "---answer---" + a["answer"] for p, a in zip(ps, eval_dataset)]
     else:
@@ -179,7 +179,7 @@ def train_gpu(rank, args, world_size, gpus_per_process):
                 print(e)
                 print("Something wrong\n\n\n\n" * 3)
                 continue
-            print(["😄" * 5 + decoded_tokens[0].replace("### Response:", "\n\n😄😄😄### Response:")])
+            print([ decoded_tokens[0].replace("### Response:", "\n\n### Response:")])
 
             if answers:
                 res = [pred + "---answer---" + a for pred, a in zip(decoded_tokens, answers)]
@@ -229,7 +229,8 @@ if __name__ == "__main__":
 
     model_suffix = args.model_name_or_path.replace("/checkpoint", "").split("/")[-1]
 
-    args.saved_file_name_or_path = args.saved_file_name_or_path + model_suffix + "_" + args.eval_data.split(".")[0]
+    args.saved_file_name_or_path = args.saved_file_name_or_path + model_suffix + "_" + args.eval_data.split("/")[-1]
+
     output_file = args.saved_file_name_or_path
     output_file = output_file
 
@@ -240,7 +241,7 @@ if __name__ == "__main__":
 
     all_result = []
 
-    print("😄😄😄 Output path is {}".format(output_file))
+    print("Output path is {}".format(output_file))
 
     for rank in range(num_processes):
         all_result += torch.load("{}_{}.list".format(output_file, rank))
