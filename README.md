@@ -140,7 +140,7 @@ do
     torchrun --nnodes 1 --node_rank 0 --nproc_per_node 8 \
         --master_addr $MASTER_ADDR --master_port 6666  \
         ${train_path} \
-        --deepspeed train_config/deepspeed_config_cuhksz.json \
+        --deepspeed train_config/deepspeed_config.json \
         --model_name_or_path ${model_path} \
         --train_file ${train_file} \
         --use_lora True \
