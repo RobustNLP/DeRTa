@@ -27,6 +27,8 @@ bash evaluation.sh
 ```
 
 
+Below is detailed illustration.
+
 ## 🛠️ Data
 ✨ First, generate training data
 ```
