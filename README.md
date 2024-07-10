@@ -18,7 +18,8 @@ Please refer to our paper [arxiv](https://www.4399.com) for more details.
 ## 🛠️ Data
 ✨ First, generate training data
 ```
- python data/train/generate_training_data.py
+cd data/train/
+python generate_training_data.py
 ```
 Then, you will get training data for vanilla safety training, MLE with harmful prefix, and our method, consisting of samples below:
 ```
