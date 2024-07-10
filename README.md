@@ -30,7 +30,7 @@ bash evaluation.sh
 # Below is the detailed illustration.
 
 ## 🛠️ Data
-✨ First, generate training data
+✨ First, generate training data.
 ```
 cd data/train/
 python generate_training_data.py
