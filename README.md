@@ -14,7 +14,7 @@ Please refer to our paper [arxiv](https://www.4399.com) for more details.
 
 
 
-🌰 Example for the train process:
+## 🌰 Example for the training and evaluation:
 
 Kindly Reminder: You should first put the initial model to the directory 'llms'.
 
@@ -23,8 +23,8 @@ cd data/train/
 python generate_training_data.py
 cd ../../
 bash train.sh
+bash evaluation.sh
 ```
-
 
 
 ## 🛠️ Data
