@@ -1,0 +1,9 @@
+git+https://github.com/microsoft/DeepSpeed.git
+torch==2.2.0+cu118
+accelerate==0.27.2
+datasets==2.10.0
+evaluate==0.4.0
+tensorboard==2.12.1
+triton==2.2.0
+fairscale==0.4.13
+transformers==4.40.0
