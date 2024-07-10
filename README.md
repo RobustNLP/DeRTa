@@ -16,7 +16,7 @@ Please refer to our paper [arxiv](https://www.4399.com) for more details.
 
 ## 🌰 Example for the training and evaluation:
 
-Kindly Reminder: You should first put the initial model to the directory 'llms'.
+💡 Kindly Reminder: You should first put the initial model to the directory 'llms'.
 
 ```
 cd data/train/
@@ -27,7 +27,7 @@ bash evaluation.sh
 ```
 
 
-Below is detailed illustration.
+# Below is the detailed illustration.
 
 ## 🛠️ Data
 ✨ First, generate training data
@@ -35,7 +35,7 @@ Below is detailed illustration.
 cd data/train/
 python generate_training_data.py
 ```
-Then, you will get training data for vanilla safety training, MLE with harmful prefix, and our method, consisting of samples below:
+✨ Then, you will get training data for vanilla safety training, MLE with harmful prefix, and our method, consisting of samples below:
 ```
 1. data for helpfulness:
 {
@@ -74,7 +74,7 @@ Then, you will get training data for vanilla safety training, MLE with harmful p
 
 
 ## 🛠️ Train
-Full parameter training
+✨ Full parameter training
 ```
 train_path=run_files/run_clm_llms_derta_llama_drop_5_percent.py
 valid_path=data/train/example_data_to_read.json
@@ -127,7 +127,7 @@ do
 done
 ```
 
-LoRA
+✨ LoRA
 ```
 train_path=transformers/examples/pytorch/language-modeling/run_clm_lora_derta_llama.py
 valid_path=data/train/example_data_to_read.json
@@ -182,7 +182,7 @@ done
 
 
 ## 🛠️ Evaluation
-Full parameter
+✨ Full parameter
 ```
 models=(saved_model/Meta-Llama-3-8B_llama_derta)
 
@@ -201,7 +201,7 @@ do
 done
 ```
 
-LoRA
+✨ LoRA
 ```
 model=llms/Meta-Llama-3-70B
 lora_names=(saved_model/lora_Meta-Llama-3-70B_llama_derta)
