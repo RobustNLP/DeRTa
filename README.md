@@ -66,7 +66,9 @@ Then, you will get training data for vanilla safety training, MLE with harmful p
 "safe": "false"
 }
 ```
+
 "safe": "false" means training with MLE.
+
 "safe": "true" means training with reinforced transition optimization (RTO).
 
 
@@ -74,15 +76,6 @@ Then, you will get training data for vanilla safety training, MLE with harmful p
 ## 🛠️ Train
 Full parameter training
 ```
-export NCCL_DEBUG=INFO
-export NCCL_SOCKET_IFNAME=en,eth,em,bond
-export NCCL_IB_GID_INDEX=3
-export NCCL_IB_SL=3
-export NCCL_NET_GDR_READ=1
-export MASTER_ADDR="${CHIEF_IP:=localhost}"
-export MASTER_PORT="${MASTER_PORT:=29510}"
-export WANDB_DISABLED=true
-
 train_path=run_files/run_clm_llms_derta_llama_drop_5_percent.py
 valid_path=data/train/example_data_to_read.json
 
@@ -132,7 +125,6 @@ do
         --overwrite_output_dir
   done
 done
-
 ```
 
 LoRA
