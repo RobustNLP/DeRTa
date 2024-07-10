@@ -15,6 +15,17 @@ Please refer to our paper [arxiv](https://www.4399.com) for more details.
 <h3 align="center">LOVE💗 and Peace🌊</h3>
 
 
+
+🌰 Example for the whole training:
+```
+cd data/train/
+python generate_training_data.py
+cd ../../
+bash train.sh
+```
+
+
+
 ## 🛠️ Data
 ✨ First, generate training data
 ```
