@@ -52,7 +52,7 @@ do
         --weight_decay 0. \
         --warmup_ratio 0.00 \
         --logging_steps 10 \
-        --block_size 1024 \
+        --block_size 512 \
         --do_train \
         --evaluation_strategy "no" \
         --bf16 True \
