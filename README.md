@@ -1,5 +1,3 @@
-Coming soon.
-
 <h1 align="center"> Refuse Whenever You Feel Unsafe </h1>
 A novel approach to improve the safety of large language models, enabling them to transition effectively from unsafe to safe state.
 <br>   <br>
