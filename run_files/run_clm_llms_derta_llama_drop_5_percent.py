@@ -191,14 +191,11 @@ class MyLlamaForCausalLM(LlamaPreTrainedModel):
                 if bs == 0:  # true 1
                     continue
                 else:
-                    sl[label != -100] = 19701  # llama3
+                    sl[label != -100] = 19701  # llama3 Sorry token id
                     mask = torch.zeros(sl.shape, dtype=torch.bool)
-                    # 随机选取一半的索引
                     num_elements_to_replace = sl.numel() - max(1, (sl.numel() + 19) // 20)
                     indices = torch.randperm(sl.numel())[:num_elements_to_replace]
-                    # 使用索引来更新 mask，使其对应位置为 True
-                    mask.view(-1)[indices] = True  # 将 mask 展平，然后使用索引更新
-                    # 将 tensor 中对应位置的元素改变为 -100
+                    mask.view(-1)[indices] = True 
                     sl[mask] = -100
 
             safe_labels = safe_labels.to(labels.device)
