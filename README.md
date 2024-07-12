@@ -10,7 +10,7 @@ Please refer to our paper [arxiv](https://www.4399.com) for more details.
   <img src="paper/cover_derta.png" alt="Logo" width="750">
 </div>
 
-<h3 align="center">LOVE💗 and Peace🌊</h3>
+<h3 align="center">LOVE💗 and PEACE🌊</h3>
 
 
 ## 📄 Brief Information for each file and directory
