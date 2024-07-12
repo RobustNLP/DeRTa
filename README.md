@@ -14,14 +14,14 @@ Please refer to our paper [arxiv](https://www.4399.com) for more details.
 
 
 ## 📄 Brief Information for each file and directory
-- *data* ---> includes the training data and evaluation data
-- *run_files* ---> the python file to train LLMs
-- *train_config* ---> includes the deepspeed and lora config files
-- *llms* ---> please put your models here
-- *results* ---> includes our experimental results for LLaMA3-8B and LLaMA3-70B
-- *saved_model* ---> after training, the model will be saved here
-- *train.sh* ---> is the file to run the trianing
-- *evaluation(_lora).py/sh* ---> is the file to evaluation for LLaMA3-8B/70B
+- `data` ---> includes the training data and evaluation data
+- `run_files` ---> the python file to train LLMs
+- `train_config` ---> includes the deepspeed and lora config files
+- `llms` ---> please put your models here
+- `results` ---> includes our experimental results for LLaMA3-8B and LLaMA3-70B
+- `saved_model` ---> after training, the model will be saved here
+- `train.sh` ---> is the file to run the trianing
+- `evaluation(_lora).py/sh` ---> is the file to evaluation for LLaMA3-8B/70B
 
 
 
@@ -77,9 +77,9 @@ python generate_training_data.py
 }
 ```
 
-"safe": "false" means training with MLE.
+`"safe": "false"` means training with MLE.
 
-"safe": "true" means training with reinforced transition optimization (RTO).
+`"safe": "true"` means training with reinforced transition optimization (RTO).
 
 
 
