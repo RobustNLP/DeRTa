@@ -349,7 +349,6 @@ def load_dataset(data_files):
             loss_fct = CrossEntropyLoss()
         ...
 ```
-- 
 
 
 ## 💡Method
