@@ -383,11 +383,11 @@ To address the issues, we have developed a method where LLMs are explicitly trai
 
 ## 🌰 Cases
 <div align="center">
-  <img src="paper/case_jailbreakchat.png" alt="Logo" width="750">
+  <img src="paper/case_jailbreakchat.jpg" alt="Logo" width="750">
 </div>
 
 <div align="center">
-  <img src="paper/case_codeattack.png" alt="Logo" width="750">
+  <img src="paper/case_codeattack.jpg" alt="Logo" width="750">
 </div>
 
 ## Citation
