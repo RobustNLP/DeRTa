@@ -4,7 +4,7 @@ A novel approach to improve the safety of large language models, enabling them t
 
 
 ## 👉 Paper
-Please refer to our paper [arxiv](https://www.4399.com) for more details.
+Please refer to our paper [arxiv](https://arxiv.org/list/cs.CL/recent) for more details.
 
 <div align="center">
   <img src="paper/cover_derta.png" alt="Logo" width="750">
