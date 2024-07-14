@@ -381,6 +381,15 @@ To address the issues, we have developed a method where LLMs are explicitly trai
 </div>
 
 
+## 🌰 Cases
+<div align="center">
+  <img src="paper/case_jailbreakchat.png" alt="Logo" width="750">
+</div>
+
+<div align="center">
+  <img src="paper/case_codeattack.png" alt="Logo" width="750">
+</div>
+
 ## Citation
 
 If you find our paper&tool interesting and useful, please feel free to give us a star and cite us through:
