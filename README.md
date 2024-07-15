@@ -4,7 +4,7 @@ A novel approach to improve the safety of large language models, enabling them t
 
 
 ## 👉 Paper
-Please refer to our paper [arxiv](https://arxiv.org/list/cs.CL/recent) for more details.
+Please refer to our paper [arxiv](https://arxiv.org/abs/2407.09121) for more details.
 
 <div align="center">
   <img src="paper/cover_derta.png" alt="Logo" width="750">
@@ -394,9 +394,14 @@ To address the issues, we have developed a method where LLMs are explicitly trai
 
 If you find our paper&tool interesting and useful, please feel free to give us a star and cite us through:
 ```bibtex
-@inproceedings{
-
+@misc{yuan2024refusefeelunsafeimproving,
+      title={Refuse Whenever You Feel Unsafe: Improving Safety in LLMs via Decoupled Refusal Training}, 
+      author={Youliang Yuan and Wenxiang Jiao and Wenxuan Wang and Jen-tse Huang and Jiahao Xu and Tian Liang and Pinjia He and Zhaopeng Tu},
+      year={2024},
+      eprint={2407.09121},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2407.09121}, 
 }
-
 ```
 
