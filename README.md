@@ -1,7 +1,9 @@
 <h1 align="center"> Refuse Whenever You Feel Unsafe: Improving Safety in LLMs via Decoupled Refusal Training </h1>
 A novel approach to improve the safety of large language models, enabling them to transition effectively from unsafe to safe state.
-<br>   <br>
+<br>   <be>
 
+## Model
+Our models can be found in [Hugging Face](https://huggingface.co/Youliang).
 
 ## 👉 Paper
 Please refer to our paper [arxiv](https://arxiv.org/abs/2407.09121) for more details.
