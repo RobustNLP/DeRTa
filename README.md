@@ -7,7 +7,7 @@
     </h2>
 </div>
 
-If you have any questions, please feel free to email the first Author: [Youliang Yuan](https://github.com/YouliangYuan).
+If you have any questions, please feel free to email the first author: [Youliang Yuan](https://github.com/YouliangYuan).
     
 <div align="center">
   <img src="paper/cover_derta.png" alt="Logo" width="500">
