@@ -5,6 +5,12 @@ A novel approach to improve the safety of large language models, enabling them t
 ## Model
 Our models can be found in [Hugging Face](https://huggingface.co/Youliang).
 
+:star: **Highlight** :star:
+- :hugs: Try the trained models at HuggingFace model hub:
+  -  [[llama3-8b-derta]](https://huggingface.co/Youliang/llama3-8b-derta) based on [[Meta-Llama-3-8B]](https://huggingface.co/meta-llama/Meta-Llama-3-8B)
+  -  [[llama3-70b-lora-derta]](https://huggingface.co/Youliang/llama3-70b-lora-derta) based on [[Meta-Llama-3-70B]](https://huggingface.co/meta-llama/Meta-Llama-3-70B)
+  -  [[llama3-70b-instruct-lora-derta-100step]](https://huggingface.co/Youliang/llama3-70b-instruct-lora-derta-100step) based on [[Meta-Llama-3-70B-Instruct]](https://huggingface.co/meta-llama/Meta-Llama-3-70B-Instruct)
+  
 ## 👉 Paper
 Please refer to our paper [arxiv](https://arxiv.org/abs/2407.09121) for more details.
 
