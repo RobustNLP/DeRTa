@@ -2,11 +2,19 @@
 A novel approach to improve the safety of large language models, enabling them to transition effectively from unsafe to safe state.
 <br>   <be>
 
+<div align="center">
+    <h2>
+      Refuse Whenever You Feel Unsafe: Improving Safety in LLMs via Decoupled Refusal Training <br><br>
+     <a href="https://arxiv.org/abs/2407.09121"> <img alt="paper link" src="https://img.shields.io/badge/Paper-arXiv-red"> </a>
+     <a href="https://huggingface.co/Youliang"> <img alt="model link" src="https://img.shields.io/badge/Model-DeRTa-blue"> </a> 
+    </h2>
+</div>
+
+
 ## Model
-Our models can be found in [Hugging Face](https://huggingface.co/Youliang).
 
 :star: **Highlight** :star:
-- :hugs: Try the trained models at HuggingFace model hub:
+- :hugs: Try the trained models at the HuggingFace model hub:
   -  [[llama3-8b-derta]](https://huggingface.co/Youliang/llama3-8b-derta) based on [[Meta-Llama-3-8B]](https://huggingface.co/meta-llama/Meta-Llama-3-8B)
   -  [[llama3-70b-lora-derta]](https://huggingface.co/Youliang/llama3-70b-lora-derta) based on [[Meta-Llama-3-70B]](https://huggingface.co/meta-llama/Meta-Llama-3-70B)
   -  [[llama3-70b-instruct-lora-derta-100step]](https://huggingface.co/Youliang/llama3-70b-instruct-lora-derta-100step) based on [[Meta-Llama-3-70B-Instruct]](https://huggingface.co/meta-llama/Meta-Llama-3-70B-Instruct)
