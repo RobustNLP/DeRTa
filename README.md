@@ -8,7 +8,7 @@
 </div>
 
 <div align="center">
-  <img src="paper/cover_derta.png" alt="Logo" width="750">
+  <img src="paper/cover_derta.png" alt="Logo" width="500">
 </div>
 
 <h3 align="center">LOVE💗 and PEACE🌊</h3>
