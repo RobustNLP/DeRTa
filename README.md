@@ -7,6 +7,11 @@
     </h2>
 </div>
 
+<div align="center">
+  <img src="paper/cover_derta.png" alt="Logo" width="750">
+</div>
+
+<h3 align="center">LOVE💗 and PEACE🌊</h3>
 
 ## Model
 
@@ -16,15 +21,6 @@
   -  [[llama3-70b-lora-derta]](https://huggingface.co/Youliang/llama3-70b-lora-derta) based on [[Meta-Llama-3-70B]](https://huggingface.co/meta-llama/Meta-Llama-3-70B)
   -  [[llama3-70b-instruct-lora-derta-100step]](https://huggingface.co/Youliang/llama3-70b-instruct-lora-derta-100step) based on [[Meta-Llama-3-70B-Instruct]](https://huggingface.co/meta-llama/Meta-Llama-3-70B-Instruct)
   
-## 👉 Paper
-Please refer to our paper [arxiv](https://arxiv.org/abs/2407.09121) for more details.
-
-<div align="center">
-  <img src="paper/cover_derta.png" alt="Logo" width="750">
-</div>
-
-<h3 align="center">LOVE💗 and PEACE🌊</h3>
-
 
 ## 📄 Brief Information for each file and directory
 - `data` ---> includes the training data and evaluation data
