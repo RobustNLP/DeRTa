@@ -23,7 +23,7 @@ If you have any questions, please feel free to email the first author: [Youliang
   -  [[llama3-70b-lora-derta]](https://huggingface.co/Youliang/llama3-70b-lora-derta) based on [[Meta-Llama-3-70B]](https://huggingface.co/meta-llama/Meta-Llama-3-70B)
   -  [[llama3-70b-instruct-lora-derta-100step]](https://huggingface.co/Youliang/llama3-70b-instruct-lora-derta-100step) based on [[Meta-Llama-3-70B-Instruct]](https://huggingface.co/meta-llama/Meta-Llama-3-70B-Instruct)
   -  [[llama3-8b-derta]](https://huggingface.co/Youliang/llama3-8b-derta) based on [[Meta-Llama-3-8B]](https://huggingface.co/meta-llama/Meta-Llama-3-8B)
-  -  [[llama3-8b-instruct-derta-100step]](https://huggingface.co/Youliang/llama3-8b-instruct-derta-100step) based on [[Meta-Llama-3-8B]](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct)
+  -  [[llama3-8b-instruct-derta-100step]](https://huggingface.co/Youliang/llama3-8b-instruct-derta-100step) based on [[Meta-Llama-3-8B-Instruct]](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct)
   
 
 ## 📄 Brief Information for each file and directory
