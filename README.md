@@ -33,7 +33,7 @@ If you have any questions, please feel free to email the first author: [Youliang
 - `llms` ---> please put your models here
 - `results` ---> includes our experimental results for LLaMA3-8B and LLaMA3-70B
 - `saved_model` ---> after training, the model will be saved here
-- `train.sh` ---> is the file to run the trianing
+- `train.sh` ---> is the file to run the training
 - `evaluation(_lora).py/sh` ---> is the file to evaluation for LLaMA3-8B/70B
 
 
