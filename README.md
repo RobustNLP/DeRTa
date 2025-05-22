@@ -1,13 +1,12 @@
 
 <div align="center">
     <h2>
-      Refuse Whenever You Feel Unsafe: Improving Safety in LLMs via Decoupled Refusal Training <br><br>
+      [ACL 2025 main] Refuse Whenever You Feel Unsafe: Improving Safety in LLMs via Decoupled Refusal Training <br><br>
      <a href="https://arxiv.org/abs/2407.09121"> <img alt="paper link" src="https://img.shields.io/badge/Paper-arXiv-red"> </a>
      <a href="https://huggingface.co/Youliang"> <img alt="model link" src="https://img.shields.io/badge/Model-DeRTa-blue"> </a> 
     </h2>
 </div>
 
-This paper is accepted by ACL 2025 main.
 If you have any questions, please feel free to email the first author: [Youliang Yuan](https://github.com/YouliangYuan).
     
 <div align="center">
