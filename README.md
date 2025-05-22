@@ -7,6 +7,7 @@
     </h2>
 </div>
 
+This paper is accepted by ACL 2025 main.
 If you have any questions, please feel free to email the first author: [Youliang Yuan](https://github.com/YouliangYuan).
     
 <div align="center">
